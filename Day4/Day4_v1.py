@@ -10,11 +10,8 @@ with open('Day4\Input.txt') as f:
         secondelf_start = int(secondelf_start)
         secondelf_end = int(secondelf_end)
 
-        print(firstelf_start, firstelf_end, secondelf_start, secondelf_end)
-
         if(firstelf_start >= secondelf_start and firstelf_end <= secondelf_end):
                 sum += 1
         elif(secondelf_start >= firstelf_start and secondelf_end <= firstelf_end):
-                sum += 1
-        
+                sum += 1  
     print (sum)
