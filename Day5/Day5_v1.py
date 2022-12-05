@@ -8,17 +8,9 @@ def move(command):
             a = stack[idx][-1]
             stack[idx].pop()
             stack[new].append(a) 
-
-
-                  
     
 with open('Day5\Input.txt') as f:
     first, second = f.read().split('\n\n')
-
-
-
-
-
 # First part
 for lines in reversed(first.splitlines()):
     for i in range(0, len(lines), 4):
@@ -26,12 +18,10 @@ for lines in reversed(first.splitlines()):
             stack.append([])
         elif lines[i+1] != ' ':
             stack[int(i/4)].append(lines[i+1])
-
 # Second part
 for lines in second.splitlines():
     command = [int(s) for s in lines.split() if s.isdigit()]
     move(command)
 
-for i in range(0, len(stack)):
-    print(stack[i][-1])
-print(stack)
+for i in range(0, len(stack)-1):
+    print(stack[i][-1],end = '')
